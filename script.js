@@ -7,6 +7,7 @@ function writePassword() {
    var passwordText = document.querySelector("#password");
 
    passwordText.value = password;
+   console.log("password:  " + password);
 }
 
 // Add event listener to generate button
@@ -37,21 +38,25 @@ function generatePassword() {
    console.log("Password length is: " + length);
    var i = 0;
 
-   while (i < length) {
-      if (isLowercase && i === 0) {
+   while (i < length || j < length) {
+      if (isLowercase && (i === 0 || i % 4 === 0)) {
          password = password + alphabetLowerCase.charAt(Math.floor(Math.random() * alphabetLowerCase.length));
-      } else if (isUpperCase && i === 1) {
+      } else if (isUpperCase && (i === 1 || i % 5 === 0)) {
          password = password + alphabetUpperCase.charAt(Math.floor(Math.random() * alphabetUpperCase.length));
-      } else if (isNumeric && i === 2) {
+      } else if (isNumeric && (i === 2 || i % 6 === 0)) {
          password = password + numericals.charAt(Math.floor(Math.random() * numericals.length));
-      } else if (isNumeric && i === 3) {
+      } else if (isSpecialCharacter && (i === 3 || i % 7 === 0)) {
          password = password + specialCharacter.charAt(Math.floor(Math.random() * specialCharacter.length));
-      } else {
-         password = password + allPossiblePwd.charAt(Math.floor(Math.random() * allPossiblePwd.length));
       }
+      // else {
+      //    password = password + allPossiblePwd.charAt(Math.floor(Math.random() * allPossiblePwd.length));
+      // }
+      j = password.length;
+      console.log("new passwork length: " + length);
       i++;
    }
    console.log("password is " + password);
+   return password;
 }
 
 // WHEN prompted for the length of the password
