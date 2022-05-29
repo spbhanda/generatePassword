@@ -28,8 +28,8 @@ Once those prompts are complete, the password will showup in the box.
 
 ## Webpage Link:
 
-https://spbhanda.github.io/ShomBhandari/
+ https://spbhanda.github.io/generatePassword/
 
 ## Webpage Snapshot:
 
-![](https://github.com/spbhanda/ShomBhandari/blob/main/assets/images/Webside%20Image.JPG)
+![](https://github.com/spbhanda/generatePassword/blob/main/Assets/03-javascript-homework-demo.png)
